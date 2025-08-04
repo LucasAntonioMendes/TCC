@@ -1,0 +1,219 @@
+    /* Estilo geral do body: fonte, tirar margem, display flex pra dividir sidebar e conteúdo */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: #121212; /* fundo escuro */
+      color: #ffffff; /* texto branco */
+    }
+    /* Sidebar: largura fixa, fundo escuro, padding, sombra na borda direita */
+    .sidebar {
+      width: 350px;
+      height: 732px;
+      background-color: #363636;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+      overflow-y: auto; /* scroll vertical */
+      border-radius: 10px;
+    }
+    /* Título da sidebar com cor azul */
+    .sidebar h2 {
+      margin-top: 0;
+      color: #ffb01d;
+    }
+    /* Margens padrão para parágrafos e listas na sidebar */
+    .sidebar p, .sidebar ul {
+      margin: 15px 0;
+    }
+    /* Remove bullets das listas */
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Itens do menu da sidebar: fundo cinza escuro, borda arredondada, cursor pointer */
+    .sidebar ul li {
+      margin-bottom: 10px;
+      padding: 8px;
+      background-color: #333333;
+      border-radius: 3px;
+      cursor: pointer;
+      user-select: none; /* não deixa selecionar o texto */
+      transition: all 0.3s; /* animação suave */
+    }
+    /* Hover nos itens do menu: fundo azul claro e texto preto */
+    .sidebar ul li:hover {
+      background-color: #ffb01d;
+      color: #000;
+    }
+    /* Submenu escondido por padrão, com margem esquerda pra indentação */
+    .submenu {
+      margin-top: 5px;
+      margin-left: 15px;
+      display: none;
+    }
+    /* Itens do submenu: fundo cinza médio, padding menor, cursor pointer */
+    .submenu li {
+      background-color: #444;
+      padding: 5px;
+      margin-bottom: 5px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    /* Hover submenu: fundo roxo mais forte e texto preto */
+    .dark .submenu li:hover {
+      background-color: #5c4ef7;
+      color: #000;
+    }
+    /* Área do conteúdo principal: ocupa resto do espaço, padding generoso, alinha tudo no centro */
+    .content {
+    flex: 1;
+    min-width: 0;
+    /* importante para evitar overflow horizontal */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   }
+    /* Espaço abaixo do título principal */
+    h1 {
+      margin-bottom: 40px;
+    }
+    /* Grid do mapa: 5 colunas fixas, espaço entre, fundo e padding */
+    #mapa {
+      display: grid;
+      grid-template-columns: repeat(5, 130px);
+      gap: 20px;
+      background-color: #333333;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      max-height: 600px;
+      overflow-y: auto; /* scroll vertical se estourar */
+
+    }
+    .mapeamento-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    }
+    /* Cada posição no mapa: fundo azul escuro, borda arredondada, tamanho fixo, centralizado */
+    .posicao {
+      background-color: #2424af;
+      border: 2px solid #2424af;
+      border-radius: 10px;
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: #ffffff;
+      font-weight: bold;
+      user-select: none;
+      transition: all 0.3s ease;
+      font-size: 24px;
+      position: center;
+    }
+    /* Se a posição estiver ocupada, muda para vermelho */
+    .posicao.ocupado {
+      background-color: #e53935;
+      border-color: #b71c1c;
+    }
+    /* Hover nas posições: azul mais claro, texto preto e leve zoom */
+    .posicao:hover {
+      background-color: #4646c0;
+      color: #000000;
+      transform: scale(1.05);
+    }
+
+        *::-webkit-scrollbar {
+          width: 8px;
+          /* largura da barra vertical */
+        }
+    
+        *::-webkit-scrollbar-track {
+          background: #1e1e1e;
+          /* fundo da barra (trilho) */
+          border-radius: 10px;
+        }
+    
+        *::-webkit-scrollbar-thumb {
+          background-color: #3f46c2;
+          /* cor da alça (scroll) */
+          border-radius: 4px;
+          border: 2px solid #1e1e1e;
+          /* opcional: espaço ao redor */   }
+
+          /* Tema claro: altera fundo e texto principais */
+body.light {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+/* Sidebar no tema claro */
+body.light .sidebar {
+  background-color: #e4e4e4;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+body.light .sidebar h2 {
+  color: #3f46c2;
+}
+
+body.light .sidebar ul li {
+  background-color: #cccccc;
+  color: #000;
+}
+
+body.light .sidebar ul li:hover {
+  background-color: #5359c2;
+  color: #000;
+}
+
+body.light .submenu li {
+  background-color: #dddddd;
+  color: #000;
+}
+
+body.light .submenu li:hover {
+  background-color: #b0a4ff;
+  color: #000;
+}
+
+/* Content área e mapa */
+body.light .content {
+  background-color: #ffffff;
+  color: #000;
+}
+
+body.light #mapa {
+  background-color: #e4e4e4;
+}
+
+/* Posições no mapa */
+body.light .posicao {
+  background-color: #3f46c2;
+  border-color: #b0b0ff;
+  color: #ffffff;
+}
+
+body.light .posicao.ocupado {
+  background-color: #ff0000;
+  border-color: #d32f2f;
+}
+
+body.light .posicao:hover {
+  background-color: #8888ff;
+  color: #000000;
+}
+
+/* Scroll personalizado claro */
+body.light *::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+body.light *::-webkit-scrollbar-thumb {
+  background-color: #3f46c2;
+  border: 2px solid #ccc;
+}

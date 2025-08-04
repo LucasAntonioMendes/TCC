@@ -1,0 +1,65 @@
+/* Estilo padrão (tema escuro) */
+.inicio-container {
+  padding: 2rem;
+  color: rgb(255, 255, 255);
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+/* Quando estiver no modo claro: inverter texto apenas da .inicio-container */
+body.light .inicio-container {
+  color: #000000; /* preto */
+}
+
+body.light .inicio-container .subtitulo {
+  color: #000000; /* preto */
+}
+
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+  background-color: #ffb01d;
+  padding: 1rem;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background-color: #ffa600;
+}
+
+.destaque {
+  color: #ffb01d; 
+
+}
+
+.dark .card {
+  background-color: #003f5f;
+  padding: 1rem;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.dark .card:hover {
+  background-color: #003f5f;
+}
+
+.dark .destaque {
+  color: #003f5f;
+
+}

@@ -1,0 +1,117 @@
+/* Reset local (aplicado só dentro do componente) */
+.movimentacao-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container centralizado */
+.movimentacao-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  gap: 15px;
+  font-family: Arial, sans-serif;
+  background-color: #003f5f;
+}
+
+/* Título */
+.movimentacao-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Labels */
+.movimentacao-container label {
+  font-weight: bold;
+  align-self: flex-start;
+  margin-bottom: -10px;
+  color: #ffffff;
+}
+
+/* Título */
+.light .movimentacao-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* Labels */
+.light .movimentacao-container label {
+  font-weight: bold;
+  align-self: flex-start;
+  margin-bottom: -10px;
+  color: #000000;
+}
+
+/* Selects e input */
+.movimentacao-container select,
+.movimentacao-container input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+.movimentacao-container select:focus,
+.movimentacao-container input[type="number"]:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+.movimentacao-container button{
+    padding: 12px 20px;
+      background-color: #ffb01d;
+      color: rgb(255, 255, 255);
+      border: none;
+      font-size: 15px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+}
+
+/* Botão */
+.light .movimentacao-container button {
+  padding: 12px 20px;
+  background-color: #ffb01d;
+  color: white;
+  border: none;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.light .movimentacao-container{
+  background-color: #e4e4e4;
+
+}
+
+.dark .movimentacao-container {
+  background-color: #3b3b3b;
+
+}
+
+.movimentacao-container button:hover {
+  background-color: #e09200;
+}
+
+/* Mensagem de retorno */
+.movimentacao-container p {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+}

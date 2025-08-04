@@ -1,0 +1,226 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: #ffffff; /* Tema claro padrão */
+  color: #000000;
+  border-radius: 10px;
+  padding: 24px 20px;
+  width: 320px;
+  min-height: 240px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dark .modal-content {
+  background-color: #333; /* Tema claro padrão */
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 24px 20px;
+  width: 320px;
+  min-height: 240px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌙 Tema escuro no modal */
+.modal-content.dark {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/* Botão X */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+  background: #ffb01d;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.modal-close:hover {
+  background: #eb9800;
+}
+
+.dark .modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+  background: #009efa;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dark .modal-close:hover {
+  background: #007ac4;
+}
+
+/* Container dos botões no modal principal */
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-buttons button {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #3a3a3a;
+  color: white;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+.modal-buttons button:hover {
+  background-color: #505050;
+}
+
+/* Botão de tema */
+.theme-toggle-inside {
+  background-color: #ffb01d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.theme-toggle-inside:hover {
+  background-color: #f39e00;
+}
+
+/* Botão de tema */
+.dark .theme-toggle-inside {
+  background-color: #009efa;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dark .theme-toggle-inside:hover {
+  background-color: #007ac4;
+}
+
+/* Modal secundário flutuante */
+.floating-modal {
+  position: fixed;
+  top: 80px;
+  right: 360px;
+  z-index: 101;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .modal-overlay,
+  .floating-modal {
+    position: fixed;
+    top: auto !important;
+    bottom: 0;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    padding: 10px !important;
+  }
+
+  .modal-content {
+    width: 100%;
+    min-height: auto;
+  }
+}
+/* Animações */
+.toast-entrando {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: entrarToast 0.5s ease forwards;
+}
+
+.toast-saindo {
+  opacity: 1;
+  transform: translateY(0);
+  animation: sairToast 0.5s ease forwards;
+}
+
+@keyframes entrarToast {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sairToast {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Container do toast flutuante no canto superior direito */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animações de entrada e saída */
+.toast-entrando {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: entrarToast 0.5s ease forwards;
+}
+
+.toast-saindo {
+  opacity: 1;
+  transform: translateY(0);
+  animation: sairToast 0.5s ease forwards;
+}
+
+@keyframes entrarToast {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sairToast {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

@@ -1,0 +1,220 @@
+/* Área da tabela */
+.tabela-container {
+  padding: 40px;
+  max-width: 95%;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+
+/* Cabeçalho */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.dark h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+/* Scroll da tabela */
+.tabela-scroll {
+  max-height: 700px;
+  max-width: 900px;
+  overflow-y: auto;
+  border-radius: 3px;
+  border: 1px solid var(--borda);
+  background-color: var(--fundo-claro);
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+}
+
+
+/* Tabela refinada */
+.tabela-visual {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  table-layout: auto;
+}
+
+.tabela-visual thead {
+  background-color: var(--cabecalho);
+  color: white;
+}
+
+.tabela-visual th,
+.tabela-visual td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--borda);
+  white-space: nowrap;
+}
+
+.tabela-visual tr:hover {
+  background-color: var(--hover);
+}
+
+.tabela-visual button {
+  background-color: #f0f0f0;
+  border: 1px solid var(--borda);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+
+.tabela-visual button:hover {
+  background-color: #dcdcdc;
+}
+/* Modal edição */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-edicao-produto {
+  background-color: var(--fundo-claro);
+  padding: 30px;
+  border-radius: 12px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-edicao-produto input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--texto);
+}
+
+.form-edicao-produto button[type="submit"] {
+  background-color: #2196f3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-edicao-produto button[type="submit"]:hover {
+  background-color: #1769aa;
+}
+
+/* Variáveis de tema */
+:root {
+  --fundo-claro: #ffffff;
+  --borda: #ccc;
+  --hover: #f5f5f5;
+  --cabecalho: #003f5f;
+  --titulo: #ffffff;
+  --texto: #ffffff;
+}
+
+.dark {
+  --fundo-claro: #1e1e1e;
+  --borda: #444;
+  --hover: #333;
+  --cabecalho: #2196f3;
+  --titulo: #ffffff;
+  --texto: #ddd;
+}
+
+.acoes-botoes {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Estilização geral dos botões */
+.acoes-botoes button {
+  flex-direction: column;
+  padding: 12px 16px;
+  /* Aumenta altura e largura */
+  font-size: 18px;
+  /* Fonte mais visível */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Botão de edição */
+.acoes-botoes button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.acoes-botoes button:first-child:hover {
+  background-color: #388e3c;
+}
+
+/* Botão de exclusão */
+.acoes-botoes button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.acoes-botoes button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+.tabela-visual td,
+.tabela-visual th {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  color: black;
+}
+
+.dark .tabela-visual td,
+.dark .tabela-visual th {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .tabela-visual {
+    font-size: 14px;
+  }
+
+  .acoes-botoes button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+    
+}
+
+.gestao-centralizada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  /* Altura total da tela */
+  padding: 20px;
+}
